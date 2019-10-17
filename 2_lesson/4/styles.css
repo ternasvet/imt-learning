@@ -1,0 +1,29 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    height: 100vh;
+    width: 70%;
+    background: #cccccc;
+    color: #fff;
+    padding: 10px;
+    display: none;
+}
+
+.nav ul {
+    margin: 0;
+}
+
+.nav a {
+    color: #fff;
+}
+
+.nav.visible {
+    display: flex;
+}

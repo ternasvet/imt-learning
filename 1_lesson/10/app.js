@@ -23,7 +23,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 arr.sort((a, b) => b > a)
-    .splice(2, 2, 100, 200);
+    .splice(1, 1, 100, 200);
 let newArr2 = arr2.join('%');
 
 console.log(newArr2);
