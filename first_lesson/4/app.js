@@ -9,13 +9,11 @@ var num3 = Number(prompt());
 //ваш код
 alert(среднее число);*/
 
-
-var num1 = Number(prompt('Введите число:'));
-var num2 = Number(prompt('Введите число:'));
-var num3 = Number(prompt('Введите число:'));
+var num1 = Number(prompt('Введите число:')),
+    num2 = Number(prompt('Введите число:')),
+    num3 = Number(prompt('Введите число:'));
 
 var averageNumber;
-//ваш код
 
 if ((num1 > num2) && (num1 < num3) || (num1 < num2) && (num1 > num3)) {
     averageNumber = num1;

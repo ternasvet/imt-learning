@@ -12,6 +12,5 @@ for (var i = 2; i <= num; i++) {
     }
     if (j === i)
         alert(i);
-
 }
 
