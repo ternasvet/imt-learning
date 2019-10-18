@@ -4,9 +4,9 @@
 // <p>Абзац, поменяется.</p>
 // <p>Абзац, поменяется.</p>
 // <p>Абзац, поменяется.</p>
-document.getElementById('button').addEventListener('click', foo);
+document.getElementById('button').addEventListener('click', getElementTagName);
 
-function foo() {
+function getElementTagName() {
     let elems = document.getElementsByTagName('p');
     if (elems.length) {
         Array.from(elems).forEach((item, i) => item.innerHTML = i + 1);

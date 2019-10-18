@@ -5,9 +5,9 @@
 // <p class="zzz">Абзац с классом zzz.</p>
 // <p>Просто абзац, не поменяется.</p>
 
-document.getElementById('button').addEventListener('click', foo);
+document.getElementById('button').addEventListener('click', getElementClassName);
 
-function foo() {
+function getElementClassName() {
     let elements = document.getElementsByClassName('some');
     for (i = 0; i < elements.length; i++) {
         elements[i].innerHTML = i + 1;

@@ -4,6 +4,7 @@
 // В зависимости от состояния навигации менять текст в кнопке.
 //
 // 4.* Элементы навигации и саму навигацию можно создать с помощью createElement, чтобы они были динамическими.
+/*
 
 document.getElementById('button').addEventListener('click', function (e) {
     e.stopPropagation();
@@ -29,6 +30,14 @@ document.querySelector('body').addEventListener('click', function () {
 document.querySelector('.nav').addEventListener('click', function (e) {
     e.stopPropagation();
 });
+*/
+
+let button = document.createElement('button');
+button.innerHTML = 'Показать меню';
+button.id = 'button';
+document.body.appendChild(button);
+
+document.getElementById('button').addEventListener('click', createMenu);
 
 function createMenu() {
     let nav = document.createElement('nav');
@@ -48,10 +57,5 @@ function createMenu() {
         li.appendChild(link);
         link.innerHTML += item;
     });
-
-    let button = document.createElement('button');
-    button.innerHTML = 'Показать меню';
-    button.id = 'button';
-    document.body.appendChild(button);
+    document.body.appendChild(nav);
 }
-createMenu();

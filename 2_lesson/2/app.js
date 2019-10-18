@@ -5,5 +5,3 @@ function toggleClass(element, className) {
     let title = document.querySelector(element);
     title.classList.toggle(className);
 }
-
-toggleClass('p', 'blue');
