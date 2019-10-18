@@ -32,14 +32,11 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 });
 */
 
-let button = document.createElement('button');
-button.innerHTML = 'Показать меню';
-button.id = 'button';
-document.body.appendChild(button);
+createHTML();
 
-document.getElementById('button').addEventListener('click', createMenu);
+// document.getElementById('button').addEventListener('click', createHTML);
 
-function createMenu() {
+function createHTML() {
     let nav = document.createElement('nav');
     nav.className = 'nav';
     let ul = document.createElement('ul');
@@ -48,7 +45,6 @@ function createMenu() {
     ];
     nav.appendChild(ul);
 
-    console.log(nav);
     items.forEach(function (item) {
         let li = document.createElement('li');
         ul.appendChild(li);
@@ -58,4 +54,33 @@ function createMenu() {
         link.innerHTML += item;
     });
     document.body.appendChild(nav);
+
+    let button = document.createElement('button');
+    button.innerHTML = 'Показать меню';
+    button.id = 'button';
+    document.body.appendChild(button);
+
+    button.addEventListener('click', function (e) {
+        e.stopPropagation();
+
+        nav.classList.toggle('visible');
+        let button = document.querySelector('#button');
+        if (nav.classList.contains('visible')) {
+            button.innerHTML = 'Скрыть меню';
+        } else {
+            button.innerHTML = 'Показать меню';
+        }
+    });
+
+    document.querySelector('body').addEventListener('click', function () {
+        if (nav.classList.contains('visible')) {
+            let button = document.querySelector('#button');
+            button.innerHTML = 'Показать меню';
+            nav.classList.remove('visible');
+        }
+    });
+
+    nav.addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
 }
