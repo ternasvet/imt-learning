@@ -42,7 +42,7 @@ function diffBetween(date1, date2) {
     let dayFromMonth = (new Date(date1.getFullYear(), date1.getMonth(), 0).getDate());
 
     if (diffDays < 0) {
-        diffMonth = -1;
+        diffMonth -= 1;
         diffDays += dayFromMonth;
     }
     if (diffMonth < 0) {
@@ -73,4 +73,11 @@ console.log(diffBetween(new Date(2019, 10, 20, 3, 54, 4), new Date(2019,
 console.log(diffBetween(new Date(2019, 10, 24, 17, 42, 46), new Date(2019,
     10, 24, 14, 40, 45)));
 
+/**
+ * Тестируем с текущей датой
+ */
 console.log(diffBetween(new Date(), new Date(2019,10, 24, 14, 40, 45)));
+/**
+ * Тестируем с текущей датой другим параметром
+ */
+console.log(diffBetween(new Date(2019,10, 24, 14, 40, 45), new Date()));
